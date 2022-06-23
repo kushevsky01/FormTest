@@ -1,0 +1,23 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+</head>
+<body>
+    <h1>Write your First Name, Second Name, Last Name.</h1>
+    <form th:action="@{/}" method="post">
+        <p>First Name:<input type="text" name ="FirstName" th:value="${FirstName}"></p>
+        <p>Second Name:<input type="text" name ="SecondName" th:value="${SecondName}"></p>
+        <p>Last Name:<input type="text" name ="LastName" th:value="${LastName}"></p>
+        <p><button type="submit" class="btn btn-success">Send</button></p>
+    </form>
+
+    <table>
+        <tr th:each="user: ${users}">
+            <td th:text="${user.firstName}"></td>
+            <td th:text="${user.secondName}"></td>
+            <td th:text="${user.lastName}"></td>
+        </tr>
+    </table>
+</body>
+</html>
